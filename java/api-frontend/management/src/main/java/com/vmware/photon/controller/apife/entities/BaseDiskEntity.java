@@ -55,6 +55,12 @@ public abstract class BaseDiskEntity extends InfrastructureEntity {
    */
   private String datastore;
 
+ /**
+  * When this property is set, the disk will be created from a specific image (and not blank)
+  */
+  private String imageId;
+  
+
   // getters and setters
   public int getCapacityGb() {
     return capacityGb;
@@ -100,4 +106,14 @@ public abstract class BaseDiskEntity extends InfrastructureEntity {
   public abstract String getAgent();
 
   public abstract void setAgent(String agent);
+
+  public String getImageId() {
+    return imageId;
+  }
+
+  public void setImageId(String imageId) {
+    this.imageId = imageId;
+  }
+
+
 }

@@ -134,5 +134,7 @@ public class DiskService extends StatefulService {
     public String agent;
 
     public List<LocalitySpec> affinities;
+
+    public String imageId;
   }
 }

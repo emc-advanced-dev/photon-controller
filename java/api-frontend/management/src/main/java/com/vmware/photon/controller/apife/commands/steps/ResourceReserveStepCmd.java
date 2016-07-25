@@ -335,6 +335,15 @@ public class ResourceReserveStepCmd extends StepCommand {
       resourceConstraints.addAll(createDatastoreTagConstraint(disk.getFlavor_info()));
     }
 
+    // Create disk from existing image
+    if (diskEntity.getImageId() != null && !diskEntity.getImageId().isEmpty()) {
+        logger.info("Create Disk Using from image {}",diskEntity.getImageId());
+
+      disk.setImage(new DiskImage(diskEntity.getImageId(), CloneType.COPY_ON_WRITE));
+    } else {
+        logger.info("Create Disk Using with no image");
+    }
+
     if (!resourceConstraints.isEmpty()) {
       disk.setResource_constraints(resourceConstraints);
     }

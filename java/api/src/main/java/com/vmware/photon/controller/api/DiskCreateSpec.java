@@ -80,6 +80,12 @@ public class DiskCreateSpec implements Flavorful, Named {
   private List<LocalitySpec> affinities = new ArrayList<>();
 
   @JsonProperty
+  @ApiModelProperty(value = "This property specifies the image to creat the Disk from.",
+      required = false)
+  @NotNull
+  private String image;
+
+  @JsonProperty
   public String getKind() {
     return kind;
   }
@@ -154,6 +160,14 @@ public class DiskCreateSpec implements Flavorful, Named {
   @Override
   public String toString() {
     return String.format("%s, %s, %s", name, kind, flavor, capacityGb);
+  }
+
+  public String getImage() {
+    return this.image;
+  }
+  
+  public void setImage(String image) {
+    this.image = image;
   }
 
 }
