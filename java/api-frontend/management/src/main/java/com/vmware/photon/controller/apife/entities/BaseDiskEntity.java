@@ -56,7 +56,7 @@ public abstract class BaseDiskEntity extends InfrastructureEntity {
   private String datastore;
 
  /**
-  * When this property is set, the disk will be created from a specific image (and not blank)
+  * When this property is set, the disk will be created from a specific image (and not blank).
   */
   private String imageId;
   

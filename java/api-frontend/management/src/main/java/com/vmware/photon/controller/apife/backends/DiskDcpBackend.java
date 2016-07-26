@@ -461,7 +461,7 @@ public class DiskDcpBackend implements DiskBackend {
     diskState.name = spec.getName();
     diskState.state = DiskState.CREATING;
     diskState.capacityGb = spec.getCapacityGb();
-    diskState.imageId = spec.getImage()
+    diskState.imageId = spec.getImage();
 
     FlavorEntity flavorEntity = flavorBackend.getEntityByNameAndKind(spec.getFlavor(), spec.getKind());
     if (!FlavorState.READY.equals(flavorEntity.getState())) {

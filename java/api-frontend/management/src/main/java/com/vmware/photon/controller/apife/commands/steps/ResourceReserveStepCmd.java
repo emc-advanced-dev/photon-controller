@@ -337,9 +337,9 @@ public class ResourceReserveStepCmd extends StepCommand {
 
     // Create disk from existing image
     if (diskEntity.getImageId() != null && !diskEntity.getImageId().isEmpty()) {
-        logger.info("Create Disk Using from image {}",diskEntity.getImageId());
+        logger.info("Create Disk Using from image {}", diskEntity.getImageId());
 
-      disk.setImage(new DiskImage(diskEntity.getImageId(), CloneType.COPY_ON_WRITE));
+      disk.setImage(new DiskImage(diskEntity.getImageId(), CloneType.FULL_COPY));
     } else {
         logger.info("Create Disk Using with no image");
     }
